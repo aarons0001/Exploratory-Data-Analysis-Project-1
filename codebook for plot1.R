@@ -8,7 +8,7 @@ url<- "https://d396qusza40orc.cloudfront.net/exdata%2Fdata%2Fhousehold_power_con
 
 ## Reads in data table from file the subsets data for specified dates:
 > powerDT <- data.table::fread(input = "household_power_consumption.txt"
-                              , na.strings="?"
+                              , na.strings="?")
 
 ##Prevents histogram from printing in scientific notation:
 > powerDT[, Global_active_power := lapply(.SD, as.numeric), .SDcols = c("Global_active_power")]
